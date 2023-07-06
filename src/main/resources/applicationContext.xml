@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the beans -->
+    <bean id="square" class="com.project.springboot.ServiceImpl.SquareShape" />
+    <bean id="triangle" class="com.project.springboot.ServiceImpl.TriangleShape" />
+
+    <!-- Configure the shapeService bean and inject the shape -->
+    <bean id="shapeContoller" class="com.project.springboot.contoller.ShapeContoller">
+        <constructor-arg ref="triangle" /> <!-- Inject the circle bean -->
+        <!-- OR -->
+        <!-- <constructor-arg ref="square" /> --> <!-- Inject the square bean -->
+    </bean>
+</beans>
